@@ -19,6 +19,7 @@ describe("KAIPresale", function () {
 
     // Transfer tokens from owner to presale contract
     await kai.connect(owner).transfer(await presale.getAddress(), ethers.parseEther("1000000"));
+    console.log('===value',ethers.parseEther("1000000"))
   });
 
   it("should allow buyer to purchase tokens and transfer ETH to treasury", async () => {
