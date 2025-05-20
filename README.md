@@ -8,6 +8,10 @@ Smart contracts powering **KaiToken (ERC-20)** and related Web3 utilities, inclu
 
 Built with Solidity, Hardhat, and optimized for UX.
 
+📸 **Want to see it in action?**  
+Check out our on-chain demo here:  
+👉 [`📊 Live Transaction Examples`](./docs/demo.md)
+
 ---
 
 ## ✨ Features
