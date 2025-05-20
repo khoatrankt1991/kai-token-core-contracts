@@ -38,7 +38,7 @@ KaiToken implements [EIP-2612](https://eips.ethereum.org/EIPS/eip-2612), allowin
 // Example: Stake with permit (frontend)
 const signature = signTypedPermit(owner, spender, value, deadline);
 stakingContract.stakeWithPermit(value, deadline, v, r, s);
-
+```
 
 ## Smart Contracts
 
