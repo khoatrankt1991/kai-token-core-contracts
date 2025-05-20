@@ -1,6 +1,44 @@
-# KAI Token Smart Contracts
+# 💰 KaiToken Core Contracts
 
-This project consists of 3 main smart contracts: KAI Token, Presale, and Staking Reward.
+Smart contracts powering **KaiToken (ERC-20)** and related Web3 utilities, including:
+
+- 🔹 Token presale with whitelist and cap
+- 🔹 Staking system with flexible & fixed plans
+- 🔹 **Permit support (EIP-2612)** for gas-optimized staking
+
+Built with Solidity, Hardhat, and optimized for UX.
+
+---
+
+## ✨ Features
+
+### ✅ ERC-20 Token (KaiToken)
+- Based on OpenZeppelin ERC20
+- Supports **EIP-2612 Permit**
+- Mintable by owner (for presale or rewards)
+
+### 🚀 Presale
+- Whitelist support (optional)
+- Configurable cap, deadline, and accepted token
+- Emits purchase events for indexing (The Graph-ready)
+
+### 🪙 Staking
+- **Flexible plan**: unstake anytime, linear reward
+- **30-day lock plan**: higher fixed APY
+- Reward source: KaiToken balance or emission
+- ✅ **Supports `stakeWithPermit(...)`** for 1-tx staking (skip `approve()`)
+
+---
+
+## 🚀 One-Tx UX with Permit
+
+KaiToken implements [EIP-2612](https://eips.ethereum.org/EIPS/eip-2612), allowing users to stake without needing an `approve()` transaction.
+
+```ts
+// Example: Stake with permit (frontend)
+const signature = signTypedPermit(owner, spender, value, deadline);
+stakingContract.stakeWithPermit(value, deadline, v, r, s);
+
 
 ## Smart Contracts
 
@@ -44,7 +82,7 @@ This project consists of 3 main smart contracts: KAI Token, Presale, and Staking
 | Network   | KAI Token Address                                   | PresaleToken Address                              | Staking Reward Address                             |
 |-----------|-----------------------------------------------------|---------------------------------------------------|----------------------------------------------------|
 | Mainnet   |                                                     |                                                   |                                                    |
-| Sepolia   | 0x7D98DF6357b07A3c0deDF849fD829f7296b818F5          | 0x641A10285b1110001D6475D19395Adcfa64E5260        | 0x3cfECcF7379fdb424BB42D258fa10e63F1b0CC59         |
+| Sepolia   | [0x7D98DF6357b07A3c0deDF849fD829f7296b818F5](https://sepolia.etherscan.io/address/0x7D98DF6357b07A3c0deDF849fD829f7296b818F5)          | [0x641A10285b1110001D6475D19395Adcfa64E5260](https://sepolia.etherscan.io/address/0x641A10285b1110001D6475D19395Adcfa64E5260)        | [0x3cfECcF7379fdb424BB42D258fa10e63F1b0CC59](https://sepolia.etherscan.io/address/0x3cfECcF7379fdb424BB42D258fa10e63F1b0CC59)         |
 
 ## Installation
 
